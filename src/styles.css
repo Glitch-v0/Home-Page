@@ -42,10 +42,6 @@ main {
     box-shadow: 4px 4px 4px rgb(121, 121, 121);
 }
 
-.description-container {
-    
-}
-
 .project-title-container {
     display: flex;
     flex-direction: row;

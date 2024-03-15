@@ -1,16 +1,23 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 const webpack = require("webpack");
 const path = require("path");
 
 module.exports = {
   mode: "production",
   devServer: {
-    static: "./src",
+    static: "./dist",
     hot: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: "src/images", to: "images" },
+        { from: "src/logos", to: "logos" },
+      ],
     }),
   ],
   output: {

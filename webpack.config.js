@@ -5,10 +5,6 @@ const path = require("path");
 
 module.exports = {
   mode: "production",
-  devServer: {
-    static: "./dist",
-    hot: true,
-  },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",

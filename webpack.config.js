@@ -1,15 +1,13 @@
-const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
+const path = require("path");
 
 module.exports = {
-  entry: "./src/index.js",
-  devtool: "inline-source-map",
+  mode: "production",
   devServer: {
     static: "./src",
-    hot: false,
+    hot: true,
   },
-  mode: "development",
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
@@ -32,18 +30,9 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: "asset/resource",
-      },
-      {
-        test: /\.(csv|tsv)$/i,
-        use: ["csv-loader"],
-      },
-      {
-        test: /\.xml$/i,
-        use: ["xml-loader"],
+        generator: {
+          filename: "images/[name][ext]", // Specify the output path for images
+        },
       },
     ],
   },

@@ -1,6 +1,19 @@
 
 :root {
-    font-size: 10px;
+    font-size: 17px;
+    color: #031622;
+    --border-color: rgb(121, 121, 121);
+    font-family: "Karla";
+}
+
+.karla {
+    font-family: "Karla", sans-serif;
+}
+
+.barlow-regular {
+    font-family: "Barlow", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 
@@ -10,13 +23,33 @@ body {
     width: 95%;
 }
 
+header {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    gap: 10px;
+}
+
+header>img {
+    width: 30%;
+    border: 2px solid black;
+    box-shadow: 1px 1px 1px var(--border-color);
+}
+
 header,
 footer {
-    background: rgb(237, 247, 253);
+    background: #dbf0fe;
     border: 1px solid black;
     border-radius: 10px;
-    box-shadow: 2px 2px 2px rgb(121, 121, 121);
-    margin: 4%;
+    box-shadow: 2px 2px 2px var(--border-color);
+    margin: 1% 1% 1% 1%;
+}
+
+#about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 60%;
 }
 
 h1, h2, p {
@@ -45,16 +78,23 @@ p {
 }
 
 @media (max-width: 800px) {
+    :root {
+            font-size: 8px;
+        }
     #projects-container {
             grid-template-columns: 1fr;
         }
+    header>img {
+        width: 55%;
+    }
 }
 
 .project-card {
     display: flex;
     flex-direction: column;
     border: 1px solid black;
-    box-shadow: 2px 2px 2px rgb(121, 121, 121);
+    box-shadow: 2px 2px 2px var(--border-color);
+    background-color: #ffffff;
 }
 
 .project-title-container {
@@ -87,8 +127,7 @@ p {
 }
 
 .icon:hover {
-    fill: #ff0000;
-    /* Color when hovering */
+    color: #ff0000;
 }
 
 .project-image {

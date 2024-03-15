@@ -79,13 +79,18 @@ p {
 
 @media (max-width: 800px) {
     :root {
-            font-size: 8px;
+            font-size: 13px;
         }
     #projects-container {
             grid-template-columns: 1fr;
         }
     header>img {
-        width: 55%;
+        height: 80%;
+        width: 80%;
+    }
+    header {
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -127,7 +132,11 @@ p {
 }
 
 .icon:hover {
-    color: #ff0000;
+    filter: invert(39%) sepia(89%) saturate(6356%) hue-rotate(207deg) brightness(102%) contrast(101%);
+}
+
+.icon:visited {
+    filter: invert(14%) sepia(65%) saturate(4806%) hue-rotate(265deg) brightness(73%) contrast(116%);
 }
 
 .project-image {
